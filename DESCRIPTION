@@ -1,0 +1,35 @@
+Package: fev1pexa
+Title: Individualized FEV1 Decline Prediction in COPD - ModelsCloud Wrapper
+Version: 0.1.0
+Authors@R: c(
+    person("Ramin", "Rezaeianzadeh", email = "raminrzn@student.ubc.ca",
+           role = c("aut", "cre")),
+    person("Zafar", "Zafari", role = "ctb",
+           comment = "Author of the underlying FEV1 decline model"),
+    person("Amin", "Adibi", role = "ctb",
+           comment = "Author of the fev1 package this wrapper calls"),
+    person("Mohsen", "Sadatsafavi", role = "ctb"))
+Description: A ModelsCloud wrapper for the 'fev1' package, which implements
+    the individualized prediction of lung-function decline in chronic
+    obstructive pulmonary disease described in Zafari et al. (CMAJ 2016)
+    <doi:10.1503/cmaj.151483>. Projects a patient's FEV1 trajectory over a
+    16-year horizon under two scenarios, continued smoking and sustained
+    quitting, with 95% prediction intervals. The model itself lives in
+    resplab/fev1; this package only adapts it to the ModelsCloud calling
+    convention (model_run(), get_sample_input(), get_default_input()) and
+    adds the gateway entry point the platform dispatches to.
+License: GPL-3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports:
+    fev1,
+    jsonlite,
+    utils
+Remotes:
+    resplab/fev1@master
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+URL: https://github.com/raminrzn/fev1pexa
+BugReports: https://github.com/raminrzn/fev1pexa/issues
